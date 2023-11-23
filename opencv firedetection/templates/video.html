@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Detection</title>
+</head>
+<body>
+    <h1>Fire Detection</h1>
+
+    <div>
+        <img src="{{ url_for('video_feed', video_source=video_file) }}" alt="Video Feed" style="width: 100%; height: auto;">
+    </div>
+
+    <div>
+        {% if Alarm_Status %}
+            <p style="color: red; font-size: 18px; font-weight: bold;">Fire Detected! Alarm Activated.</p>
+        {% else %}
+            <p style="color: green; font-size: 18px; font-weight: bold;">No Fire Detected.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
